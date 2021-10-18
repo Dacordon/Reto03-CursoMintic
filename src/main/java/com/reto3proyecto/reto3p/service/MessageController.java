@@ -26,8 +26,8 @@ public class MessageController {
     private MessageService messageService;
     @GetMapping("/all")
     public List<Message> getMessage() {return messageService.getAll(); };
-    @GetMapping ("/{id}")
-    public Optional <Message> getMessage(@PathVariable("id") int MessageId){
+    @GetMapping ("/{idMessage}")
+    public Optional <Message> getMessage(@PathVariable("idMessage") int MessageId){
         return messageService.getMessage(MessageId);
     }   
     @PostMapping("/save")

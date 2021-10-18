@@ -26,8 +26,8 @@ public class ReservationController {
     private ReservationService reservationService;
     @GetMapping("/all")
     public List<Reservation> getReservation() {return reservationService.getAll(); };
-    @GetMapping ("/{id}")
-    public Optional <Reservation> getReservation(@PathVariable("id") int ReservationId){
+    @GetMapping ("/{idReservation}")
+    public Optional <Reservation> getReservation(@PathVariable("idReservation") int ReservationId){
         return reservationService.getReservation(ReservationId);
     }   
     @PostMapping("/save")

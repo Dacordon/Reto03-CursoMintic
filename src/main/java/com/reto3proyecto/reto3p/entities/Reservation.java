@@ -4,12 +4,18 @@
  */
 package com.reto3proyecto.reto3p.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
+import java.util.Date;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
 
 /**
  *
@@ -20,34 +26,90 @@ import javax.persistence.Table;
 public class Reservation implements Serializable{
  @Id 
  @GeneratedValue (strategy=GenerationType.IDENTITY)
-    private Integer id;
-    private String starDate;
-    private String devolutionDate;
+    private Integer idReservation;
+    private Date startDate;
+    private Date devolutionDate;
+    private String status="created";
+    
+    @ManyToOne
+    @JsonIgnoreProperties("reservations")
+    @JoinColumn(name="MotorbikeId")
+    private Motorbike motorbike;
+    
+    @ManyToOne
+    @JsonIgnoreProperties({"reservations","messages"})
+    @JoinColumn(name="idClient")
+    private Client client;
+    
+    private String score;
 
-
-    public Integer getId() {
-        return id;
+    
+    
+    public String getStatus() {
+        return status;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
-    public String getStarDate() {
-        return starDate;
+    public String getScore() {
+        return score;
     }
 
-    public void setStarDate(String starDate) {
-        this.starDate = starDate;
+    public void setScore(String score) {
+        this.score = score;
+    }
+    
+    
+    
+    
+    
+
+    public Motorbike getMotorbike() {
+        return motorbike;
     }
 
-    public String getDevolutionDate() {
+    public void setMotorbike(Motorbike motorbike) {
+        this.motorbike = motorbike;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+    
+    
+    public Integer getIdReservation() {
+        return idReservation;
+    }
+
+    public void setIdReservation(Integer idReservation) {
+        this.idReservation = idReservation;
+    }
+
+    public Date getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
+    }
+
+    public Date getDevolutionDate() {
         return devolutionDate;
     }
 
-    public void setDevolutionDate(String devolutionDate) {
+    public void setDevolutionDate(Date devolutionDate) {
         this.devolutionDate = devolutionDate;
     }
+    
+
+
+    
 
      
  

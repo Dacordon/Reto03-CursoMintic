@@ -20,14 +20,14 @@ public class ClientService {
     @Autowired
     ClientRepository clientRepository;
   public List<Client> getAll() {return (List<Client>) clientRepository.getAll();};
-  public Optional<Client> getClient(int id) {return clientRepository.getClient(id); };
+  public Optional<Client> getClient(int idClient) {return clientRepository.getClient(idClient); };
   public Client save (Client client){
-      if (client.getId()==null){
+      if (client.getIdClient()==null){
           return clientRepository.save(client);
       }
       else
       {
-          Optional<Client> mo = clientRepository.getClient(client.getId());
+          Optional<Client> mo = clientRepository.getClient(client.getIdClient());
           if (mo.isEmpty()){
               return clientRepository.save(client);
           }

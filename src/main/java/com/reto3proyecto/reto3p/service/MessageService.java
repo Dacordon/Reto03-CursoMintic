@@ -20,14 +20,14 @@ public class MessageService {
     @Autowired
     MessageRepository messageRepository;
   public List<Message> getAll() {return (List<Message>) messageRepository.getAll();};
-  public Optional<Message> getMessage(int id) {return messageRepository.getMessage(id); };
+  public Optional<Message> getMessage(int idMessage) {return messageRepository.getMessage(idMessage); };
   public Message save (Message message){
-      if (message.getId()==null){
+      if (message.getIdMessage()==null){
           return messageRepository.save(message);
       }
       else
       {
-          Optional<Message> mo = messageRepository.getMessage(message.getId());
+          Optional<Message> mo = messageRepository.getMessage(message.getIdMessage());
           if (mo.isEmpty()){
               return messageRepository.save(message);
           }

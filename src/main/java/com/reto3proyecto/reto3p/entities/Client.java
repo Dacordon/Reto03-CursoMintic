@@ -4,11 +4,15 @@
  */
 package com.reto3proyecto.reto3p.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -20,18 +24,54 @@ import javax.persistence.Table;
 public class Client implements Serializable{
  @Id 
  @GeneratedValue (strategy=GenerationType.IDENTITY)
-    private Integer id;
+    private Integer idClient;
     private String name;
     private String email;
     private String password;
     private int age;
 
-    public Integer getId() {
-        return id;
+    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "client")
+    @JsonIgnoreProperties("client")
+    private List<Reservation> reservations;
+    
+    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "client")
+    @JsonIgnoreProperties("client")
+    private List<Message> messages;
+
+    
+    
+    public List<Message> getMessages() {
+        return messages;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setMessages(List<Message> messages) {
+        this.messages = messages;
+    }
+ 
+    
+
+
+    
+    
+    
+    public List<Reservation> getReservations() {
+        return reservations;
+    }
+
+    public void setReservations(List<Reservation> reservations) {
+        this.reservations = reservations;
+    }
+    
+    
+    
+ 
+    
+    public Integer getIdClient() {
+        return idClient;
+    }
+
+    public void setIdClient(Integer idClient) {
+        this.idClient = idClient;
     }
 
     public String getName() {

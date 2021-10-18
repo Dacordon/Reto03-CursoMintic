@@ -20,14 +20,14 @@ public class ReservationService {
     @Autowired
     ReservationRepository reservationRepository;
   public List<Reservation> getAll() {return (List<Reservation>) reservationRepository.getAll();};
-  public Optional<Reservation> getReservation(int id) {return reservationRepository.getReservation(id); };
+  public Optional<Reservation> getReservation(int idReservation) {return reservationRepository.getReservation(idReservation); };
   public Reservation save (Reservation reservation){
-      if (reservation.getId()==null){
+      if (reservation.getIdReservation()==null){
           return reservationRepository.save(reservation);
       }
       else
       {
-          Optional<Reservation> mo = reservationRepository.getReservation(reservation.getId());
+          Optional<Reservation> mo = reservationRepository.getReservation(reservation.getIdReservation());
           if (mo.isEmpty()){
               return reservationRepository.save(reservation);
           }

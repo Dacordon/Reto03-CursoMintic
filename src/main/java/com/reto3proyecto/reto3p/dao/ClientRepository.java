@@ -20,6 +20,6 @@ public class ClientRepository {
     @Autowired
     private ClientCrud clientCrudRepository;
     public List<Client> getAll(){return (List<Client>) clientCrudRepository.findAll();};
-    public Optional<Client> getClient(int id) {return clientCrudRepository.findById(id);};
+    public Optional<Client> getClient(int clientId) {return clientCrudRepository.findById(clientId);};
     public Client save(Client client) {return clientCrudRepository.save(client);};
 }
