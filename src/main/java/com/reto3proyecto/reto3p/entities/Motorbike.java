@@ -23,8 +23,9 @@ public class Motorbike implements Serializable{
     private Integer id;
     private String name;
     private String brand;
-    private Integer model;
+    private Integer year;
     private Integer id_cat;
+    private String description;
 
     public Integer getId() {
         return id;
@@ -50,12 +51,12 @@ public class Motorbike implements Serializable{
         this.brand = brand;
     }
 
-    public Integer getModel() {
-        return model;
+    public Integer getYear() {
+        return year;
     }
 
-    public void setModel(Integer model) {
-        this.model = model;
+    public void setYear(Integer year) {
+        this.year = year;
     }
 
     public Integer getId_cat() {
@@ -65,6 +66,15 @@ public class Motorbike implements Serializable{
     public void setId_cat(Integer id_cat) {
         this.id_cat = id_cat;
     }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+    
  
  
  

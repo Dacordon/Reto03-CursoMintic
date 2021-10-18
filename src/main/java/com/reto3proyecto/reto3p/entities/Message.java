@@ -16,13 +16,13 @@ import javax.persistence.Table;
  * @author Consultor
  */
 @Entity
-@Table (name="category")
-public class Category implements Serializable{
+@Table (name="message")
+public class Message implements Serializable{
  @Id 
  @GeneratedValue (strategy=GenerationType.IDENTITY)
     private Integer id;
-    private String name;
-    private String description;
+    private String messageText;
+
 
     public Integer getId() {
         return id;
@@ -32,21 +32,15 @@ public class Category implements Serializable{
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getMessageText() {
+        return messageText;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setMessageText(String messageText) {
+        this.messageText = messageText;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
+    
     
     
     

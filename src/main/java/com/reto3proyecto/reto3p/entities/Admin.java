@@ -16,13 +16,15 @@ import javax.persistence.Table;
  * @author Consultor
  */
 @Entity
-@Table (name="category")
-public class Category implements Serializable{
+@Table (name="admin")
+public class Admin implements Serializable{
  @Id 
  @GeneratedValue (strategy=GenerationType.IDENTITY)
     private Integer id;
     private String name;
-    private String description;
+    private Integer email;
+    private Integer password;
+    
 
     public Integer getId() {
         return id;
@@ -40,15 +42,25 @@ public class Category implements Serializable{
         this.name = name;
     }
 
-    public String getDescription() {
-        return description;
+    public Integer getEmail() {
+        return email;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setEmail(Integer email) {
+        this.email = email;
     }
+
+    public Integer getPassword() {
+        return password;
+    }
+
+    public void setPassword(Integer password) {
+        this.password = password;
+    }
+
     
-    
-    
-    
+ 
+ 
+ 
 }
+
