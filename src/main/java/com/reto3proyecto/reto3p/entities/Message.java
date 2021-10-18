@@ -45,9 +45,6 @@ public class Message implements Serializable{
         this.client = client;
     }
     
-    
-     
- 
 
     public Motorbike getMotorbike() {
         return motorbike;
