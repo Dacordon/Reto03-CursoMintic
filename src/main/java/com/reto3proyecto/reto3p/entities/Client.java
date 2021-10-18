@@ -39,7 +39,6 @@ public class Client implements Serializable{
     private List<Message> messages;
 
     
-    
     public List<Message> getMessages() {
         return messages;
     }

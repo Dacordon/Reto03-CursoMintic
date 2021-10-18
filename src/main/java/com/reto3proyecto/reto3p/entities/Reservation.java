@@ -44,7 +44,6 @@ public class Reservation implements Serializable{
     private String score;
 
     
-    
     public String getStatus() {
         return status;
     }

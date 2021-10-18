@@ -37,7 +37,6 @@ public class Message implements Serializable{
     private Client client;
 
     
-    
     public Client getClient() {
         return client;
     }
