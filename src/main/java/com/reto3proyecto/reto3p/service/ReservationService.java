@@ -6,6 +6,7 @@ package com.reto3proyecto.reto3p.service;
 
 import com.reto3proyecto.reto3p.dao.ReservationRepository;
 import com.reto3proyecto.reto3p.entities.Reservation;
+import com.reto3proyecto.reto3p.entities.Reservation;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,5 +40,33 @@ public class ReservationService {
       
       
   }
+public Reservation update(Reservation reservation){
+        if(reservation.getIdReservation()!=null){
+            Optional<Reservation> e=reservationRepository.getReservation(reservation.getIdReservation());
+            if(!e.isEmpty()){
+                if(reservation.getStartDate()!=null){
+                    e.get().setStartDate(reservation.getStartDate());
+                }
+                if(reservation.getDevolutionDate()!=null){
+                    e.get().setDevolutionDate(reservation.getDevolutionDate());
+                }
+                reservationRepository.save(e.get());
+                return e.get();
+            }else{
+                return reservation;
+            }
+        }else{
+            return reservation;
+        }
+    }
+
+
+    public boolean deleteReservation(int reservationId) {
+        Boolean aBoolean = getReservation(reservationId).map(reservation -> {
+            reservationRepository.delete(reservation);
+            return true;
+        }).orElse(false);
+        return aBoolean;
+    }  
     
 }

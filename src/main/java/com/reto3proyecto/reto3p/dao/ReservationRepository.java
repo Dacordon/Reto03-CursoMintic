@@ -5,6 +5,7 @@
 package com.reto3proyecto.reto3p.dao;
 
 import com.reto3proyecto.reto3p.entities.Reservation;
+import com.reto3proyecto.reto3p.entities.Reservation;
 import com.reto3proyecto.reto3p.entities.ReservationCrud;
 import java.util.List;
 import java.util.Optional;
@@ -22,6 +23,7 @@ public class ReservationRepository {
     public List<Reservation> getAll(){return (List<Reservation>) reservationCrudRepository.findAll();};
     public Optional<Reservation> getReservation(int idReservation) {return reservationCrudRepository.findById(idReservation);};
     public Reservation save(Reservation reservation) {return reservationCrudRepository.save(reservation);};
+    public void delete (Reservation reservation){reservationCrudRepository.delete(reservation);}
     
     
 }

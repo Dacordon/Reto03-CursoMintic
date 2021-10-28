@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client</title>
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="js/misFunciones_cliente.js"></script>
+    <h1>CRUD CLIENTE</h1>    
+    <button onclick="traerInformacion()">Consultar</button>
+    </br></br>
+    <div>
+        <input type="text" id="email" placeholder="email">
+        <input type="text" id="password" placeholder="password">
+        <input type="text" id="name" placeholder="name">
+        <input type="number" id="age" placeholder="age">
+        
+    </div>
+    </br>
+    <div id="resultado"></div>
+    </br>
+    <button onclick="guardarInformacion()">Guardar</button>
+    <button onclick="actualizarInformacion()">Actualizar</button>
+    </br></br>
+    <button onclick="location.href = 'inicio.html'">Regresar</button>
+    <!-- <input type="button" onclick="traerInformacion()" title="Consultar"> -->
+</body>
+</html>

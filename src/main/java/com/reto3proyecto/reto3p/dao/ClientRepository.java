@@ -6,6 +6,7 @@ package com.reto3proyecto.reto3p.dao;
 
 import com.reto3proyecto.reto3p.entities.Client;
 import com.reto3proyecto.reto3p.entities.ClientCrud;
+import com.reto3proyecto.reto3p.entities.Client;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,4 +23,5 @@ public class ClientRepository {
     public List<Client> getAll(){return (List<Client>) clientCrudRepository.findAll();};
     public Optional<Client> getClient(int clientId) {return clientCrudRepository.findById(clientId);};
     public Client save(Client client) {return clientCrudRepository.save(client);};
+    public void delete (Client client){clientCrudRepository.delete(client);}
 }

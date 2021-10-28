@@ -6,6 +6,7 @@ package com.reto3proyecto.reto3p.dao;
 
 import com.reto3proyecto.reto3p.entities.Message;
 import com.reto3proyecto.reto3p.entities.MessageCrud;
+import com.reto3proyecto.reto3p.entities.Message;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,7 @@ public class MessageRepository {
     public List<Message> getAll(){return (List<Message>) messageCrudRepository.findAll();};
     public Optional<Message> getMessage(int idMessage) {return messageCrudRepository.findById(idMessage);};
     public Message save(Message message) {return messageCrudRepository.save(message);};
+    public void delete (Message message){messageCrudRepository.delete(message);}
     
     
 }
