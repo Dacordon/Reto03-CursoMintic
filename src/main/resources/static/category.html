@@ -1,29 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/style.css" media="screen" />
     <title>Category</title>
 </head>
+
 <body>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-	<script type="text/javascript" src="js/misFunciones_categoria.js"></script>
-    <h1>CRUD CATEGORÍA</h1>    
-    <button onclick="traerInformacion()">Consultar</button>
-    </br></br>
-    <div>
-        <input type="text" readonly='readonly' id="id" placeholder="id (no editable)">
-        <input type="text" id="name" placeholder="name">
-        <input type="text" id="description" placeholder="description">
+    <script type="text/javascript" src="js/misFunciones_categoria.js"></script>
+
+    <div class="nav-bar">
+        <a href="https://www.misiontic2022.gov.co/portal/" target="_blank">
+            <img alt="Italian Trulli" src="img/logo-mision.png">
+        </a>
+        <h1>CRUD CATEGORÍA</h1>
     </div>
-    </br>
-    <div id="resultado"></div>
-    </br>
-    <button onclick="guardarInformacion()">Guardar</button>
-    <button onclick="actualizarInformacion()">Actualizar</button>
+    <div class="o-cont_btn">
+        <button class="o-btn_ini" onclick="traerInformacion()">Consultar</button>
+    </div>
     </br></br>
-    <button onclick="location.href = 'inicio.html'">Regresar</button>
+    <div class="o-imputs">
+        <input class="o-imp_crud" type="text" readonly='readonly' id="id" placeholder="id (no editable)">
+        <input class="o-imp_crud" type="text" id="name" placeholder="name">
+        <input class="o-imp_crud" type="text" id="description" placeholder="description">
+    </div>
+    <div id="resultado"></div>
+    <div class="o-cont_btn_crud">
+        <button class="o-btn_crud" id="o-btn_reg" onclick="location.href = 'inicio.html'">Regresar</button>
+        <button class="o-btn_crud" onclick="guardarInformacion()">Guardar</button>
+        <button class="o-btn_crud" onclick="actualizarInformacion()">Actualizar</button>
+    </div>
     <!-- <input type="button" onclick="traerInformacion()" title="Consultar"> -->
 </body>
+
 </html>

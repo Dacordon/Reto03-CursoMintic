@@ -4,8 +4,10 @@
  */
 package com.reto3proyecto.reto3p.service;
 
+
 import com.reto3proyecto.reto3p.entities.Reservation;
-import com.reto3proyecto.reto3p.entities.Reservation;
+import com.reto3proyecto.reto3p.reports.countClients;
+import com.reto3proyecto.reto3p.reports.statusReservations;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,6 +51,22 @@ public class ReservationController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean delete(@PathVariable("id") int Id) {
         return reservationService.deleteReservation(Id);
-    }    
+    }
+
+    @GetMapping("/report-clients")
+    public List<countClients> getClientes(){
+        return reservationService.getTopClientByCategory();
+    
+    }   
+    
+    @GetMapping("/report-status")
+    public statusReservations getReservas(){
+    return reservationService.getReporteStatusReservaciones();
+    }
+    
+    @GetMapping("/report-dates/{startDate}/{devolutionDate}")
+    public List<Reservation> getReservasTiempo (@PathVariable("startDate")String startDate, @PathVariable("devolutionDate")String devolutionDate){
+        return reservationService.getReportesTiempoReservaciones(startDate, devolutionDate);
+    }
     
 }

@@ -1,0 +1,134 @@
+
+
+body{
+    font-family: 'Open Sans', sans-serif;
+
+    background-color:rgb(228, 226, 226);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    margin:0;
+}
+
+/* --------ESTILOS NAV BAR */
+.nav-bar{
+    width:100vw;
+    height: 6rem;
+    margin: 0 0 1.5rem 0;
+
+    display:flex;
+    justify-content: center;
+    align-items:center;
+
+    background-color:rgb(60, 66, 66);
+    color:white;
+}
+
+.nav-bar img{
+    height:4rem;
+}
+/* ------------------------- */
+
+/* --------------- ESTILOS DE BOTONES */
+.o-cont_btn{
+    margin: 1rem 0 0 0;
+
+    display:flex;
+    align-items: center;
+}
+
+.o-btn_ini{
+    width:15rem;
+    height:3rem;
+    border: 0px;
+    border-radius: 25px;
+    background-color:#141BA4;
+    color:white;
+    font-size: 1.2rem;
+
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+}
+
+img{
+    margin: 0 1rem 0 1rem
+}
+
+.o-btn_ini:hover{
+    transition:500ms;
+    background-color:#0a0e64;
+    width:17rem;
+    height:4rem;
+}
+/* ----------------- */
+
+
+/* -------------CRUD------------------- */
+
+/* -----------ESTILOS BOTONES CRUD */
+
+.o-cont_btn_crud{
+    margin: 2rem 0 0 0;
+    width: 80%;
+
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content:space-between;
+}
+
+.o-btn_crud{
+    width:13rem;
+    height:2.5rem;
+    border: 0px;
+    border-radius: 25px;
+
+
+    background-color:#1476a4;
+    color:white;
+    font-size: 1.2rem;
+
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+}
+
+#o-btn_reg{
+    background-color:#a44e14;
+}
+
+img{
+    margin: 0 1rem 0 1rem
+}
+
+.o-btn_crud:hover{
+    transition:500ms;
+    background-color:#156083;
+    width:14rem;
+    height:3rem;
+}
+
+#o-btn_reg:hover{
+    background-color:#79390e;
+}
+/* ---------------------------- */
+
+/* -----------------ESTILOS IMPUTS */
+.o-imputs{
+    width:70%;
+    height:2rem;
+
+    display:flex;
+    justify-content:space-around;
+}
+
+.o-imp_crud{
+    width: 30%;
+    border: 0px;
+    border-radius: 10px;
+    background-color:#b6b7c7;
+    font-size: 1.2rem;
+}

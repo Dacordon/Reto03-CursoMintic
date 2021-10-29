@@ -5,8 +5,14 @@
 package com.reto3proyecto.reto3p.service;
 
 import com.reto3proyecto.reto3p.dao.ReservationRepository;
+import com.reto3proyecto.reto3p.entities.Client;
 import com.reto3proyecto.reto3p.entities.Reservation;
-import com.reto3proyecto.reto3p.entities.Reservation;
+import com.reto3proyecto.reto3p.reports.countClients;
+import com.reto3proyecto.reto3p.reports.statusReservations;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -68,5 +74,38 @@ public Reservation update(Reservation reservation){
         }).orElse(false);
         return aBoolean;
     }  
+    
+    public statusReservations getReporteStatusReservaciones(){
+        List<Reservation>completed= reservationRepository.ReservacionStatus("completed");
+        List<Reservation>cancelled= reservationRepository.ReservacionStatus("cancelled");
+        return new statusReservations(completed.size(), cancelled.size());
+    }
+    
+      public List<countClients> getTopClientByCategory(){
+        List<Object[]> report= reservationRepository.getTopClient();
+        List<countClients>res=new ArrayList<>();
+        for(int i=0;i<report.size();i++){
+            res.add(new countClients((Long)report.get(i)[1],(Client) report.get(i)[0]));
+        }
+        return res;
+      }    
+    
+        public List<Reservation> getReportesTiempoReservaciones(String datoA, String datoB){
+        SimpleDateFormat parser=new SimpleDateFormat ("yyyy-MM-dd");
+        Date datoUno = new Date();
+        Date datoDos = new Date();
+        
+        try{
+            datoUno = parser.parse(datoA);
+            datoDos = parser.parse(datoB);
+        }catch(ParseException evt){
+            evt.printStackTrace();
+        }if(datoUno.before(datoDos)){
+            return reservationRepository.ReservacionTiempo(datoUno, datoDos);
+        }else{
+            return new ArrayList<>();
+        }
+    } 
+    
     
 }
