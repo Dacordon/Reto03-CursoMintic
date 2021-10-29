@@ -2,7 +2,7 @@
 function traerInformacion(){
     $.ajax({
         //url: 'http://152.70.214.211/api/Category/all',
-        url: 'http://localhost/api/Category/all',
+        url: 'http://152.70.214.211/api/Category/all',
         type : 'GET',
         dataType : 'json',
         contentType: "application/json; charset=utf-8",
