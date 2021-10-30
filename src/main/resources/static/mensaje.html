@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,30 +8,32 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css" media="screen" />
     <title>Message</title>
 </head>
+
 <body>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-	<script type="text/javascript" src="js/misFunciones_mensaje.js"></script>
+    <script type="text/javascript" src="js/misFunciones_mensaje.js"></script>
 
     <div class="nav-bar">
         <a href="https://www.misiontic2022.gov.co/portal/" target="_blank">
             <img alt="Italian Trulli" src="img/logo-mision.png">
         </a>
-    <h1>CRUD MENSAJE</h1> 
-    </div>   
+        <h1>CRUD MENSAJE</h1>
+    </div>
     <div class="o-cont_btn">
-    <button onclick="traerInformacion()">Consultar</button>
+        <button class="o-btn_ini" onclick="traerInformacion()">Consultar</button>
     </div>
     </br></br>
     <div class="o-imputs">
-        <input type="text" readonly='readonly' id="id" placeholder="id (no editable)">
-        <input type="text" id="messagetext" placeholder="message text">
+        <input class="o-imp_crud" type="text" readonly='readonly' id="id" placeholder="id (no editable)">
+        <input class="o-imp_crud" type="text" id="messagetext" placeholder="message text">
     </div>
     <div id="resultado"></div>
     <div class="o-cont_btn_crud">
-    <button onclick="guardarInformacion()">Guardar</button>
-    <button onclick="actualizarInformacion()">Actualizar</button>
-    <button onclick="location.href = 'inicio.html'">Regresar</button>
+        <button class="o-btn_crud" onclick="location.href = 'inicio.html'">Regresar</button>
+        <button class="o-btn_crud" onclick="guardarInformacion()">Guardar</button>
+        <button class="o-btn_crud" onclick="actualizarInformacion()">Actualizar</button>
     </div>
     <!-- <input type="button" onclick="traerInformacion()" title="Consultar"> -->
 </body>
+
 </html>

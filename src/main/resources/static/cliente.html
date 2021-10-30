@@ -18,20 +18,20 @@
     <h1>CRUD CLIENTE</h1>
     </div>
     <div class="o-cont_btn">    
-    <button onclick="traerInformacion()">Consultar</button>
+    <button class="o-btn_ini" onclick="traerInformacion()">Consultar</button>
     </div>
     </br></br>
     <div class="o-imputs">
-        <input type="text" id="email" placeholder="email">
-        <input type="text" id="password" placeholder="password">
-        <input type="text" id="name" placeholder="name">
-        <input type="number" id="age" placeholder="age">   
+        <input class="o-imp_crud" type="text" id="email" placeholder="email">
+        <input class="o-imp_crud" type="text" id="password" placeholder="password">
+        <input class="o-imp_crud" type="text" id="name" placeholder="name">
+        <input class="o-imp_crud" type="number" id="age" placeholder="age">   
     </div>
     <div id="resultado"></div>
     <div class="o-cont_btn_crud">
-    <button onclick="guardarInformacion()">Guardar</button>
-    <button onclick="actualizarInformacion()">Actualizar</button>
-    <button onclick="location.href = 'inicio.html'">Regresar</button>
+    <button class="o-btn_crud" id="o-btn_reg" onclick="location.href = 'inicio.html'">Regresar</button>
+    <button class="o-btn_crud" onclick="guardarInformacion()">Guardar</button>
+    <button class="o-btn_crud" onclick="actualizarInformacion()">Actualizar</button>
     </div>
     <!-- <input type="button" onclick="traerInformacion()" title="Consultar"> -->
 </body>

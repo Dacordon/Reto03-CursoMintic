@@ -1,7 +1,7 @@
 
 function traerInformacionStatus(){
     $.ajax({
-        url: 'http://localhost/api/Reservation/report-status',
+        url: 'http://152.70.214.211/api/Reservation/report-status',
         type : 'GET',
         dataType : 'json',
         contentType: "application/json; charset=utf-8",
@@ -37,7 +37,7 @@ function traerInformacionStatus(){
 
 function traerInformacionClients(){
     $.ajax({
-        url: 'http://localhost/api/Reservation/report-clients',
+        url: 'http://152.70.214.211/api/Reservation/report-clients',
         type : 'GET',
         dataType : 'json',
         contentType: "application/json; charset=utf-8",
