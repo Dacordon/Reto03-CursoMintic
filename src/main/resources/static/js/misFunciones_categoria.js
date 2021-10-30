@@ -11,7 +11,7 @@ function traerInformacion(){
             console.log(respuesta);
 
             $("#resultado").empty();
-            let miTabla = '<table border= "1px solid black" style="border-collapse: collapse">';
+            let miTabla = '<table border= "1px" style="border-collapse: collapse">';
             miTabla+= '<td>'+ "Name"+ '</td>';
             miTabla+= '<td>'+ "Description"+ '</td>'; 
             miTabla += '</tr>';
@@ -20,7 +20,7 @@ function traerInformacion(){
                 miTabla += '<td>'+ respuesta[i].name+ '</td>'; 		 		
                 miTabla += '<td>'+ respuesta[i].description+ '</td>';                		             
                 miTabla += '<td><button onclick="editarRegistro('+respuesta[i].id+' )">Editar</button>';
-                miTabla += '<td><button onclick="borrarRegistro('+respuesta[i].id+' )">Borrar</button>'; 		
+                miTabla += '<td><button class="o-btn_tab_del" onclick="borrarRegistro('+respuesta[i].id+' )">Borrar</button>'; 		
                 miTabla += '</tr>';
         
             }

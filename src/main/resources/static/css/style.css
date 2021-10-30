@@ -112,6 +112,7 @@ img{
 }
 
 #o-btn_reg:hover{
+    transition:500ms;
     background-color:#79390e;
 }
 /* ---------------------------- */
@@ -132,3 +133,56 @@ img{
     background-color:#b6b7c7;
     font-size: 1.2rem;
 }
+
+
+
+/* ---------------- */
+
+table{
+    border-color: white;
+    background-color: #cdd1d0;
+    color: black;
+    margin: 3rem 0 3rem 0;
+}
+
+tr{
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+  }
+
+table tbody tr td button{
+    width:5rem;
+    height:1.5rem;
+    border: 0px;
+    border-radius: 10px;
+
+    background-color:#1476a4;
+    color:white;
+    font-size: 1rem;
+
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+}
+
+table tbody tr td button:hover{
+    background-color:#0b4b68;
+    transition:500ms;
+}
+
+.o-btn_tab_del{
+    background-color:#d4150e;
+}
+
+.o-btn_tab_del:hover{
+    background-color:#9c140f;
+    transition:500ms;
+}
+
+
+
+  /* border="1px solid black" style="border-collapse: collapse" */
