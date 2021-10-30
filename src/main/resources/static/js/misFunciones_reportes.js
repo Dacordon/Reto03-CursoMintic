@@ -10,7 +10,7 @@ function traerInformacionStatus(){
             console.log(respuesta);
 
             $("#resultado").empty();
-            let miTabla = '<table border= "1px solid black" style="border-collapse: collapse">';
+            let miTabla = '<table border= "1px" style="border-collapse: collapse">';
             miTabla+= '<td>'+ "Completadas"+ '</td>';
             miTabla+= '<td>'+ "Canceladas"+ '</td>'; 	
 

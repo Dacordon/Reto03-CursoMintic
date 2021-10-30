@@ -4,34 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/style.css" media="screen" />
     <title>Moto</title>
 </head>
 <body>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
-    <h1>CRUD MOTO</h1>    
+    <div class="nav-bar">
+        <a href="https://www.misiontic2022.gov.co/portal/" target="_blank">
+            <img alt="Italian Trulli" src="img/logo-mision.png">
+        </a>
+    <h1>CRUD MOTO</h1>
+    </div> 
+    <div class="o-cont_btn">   
     <button onclick="traerInformacion()">Consultar</button>
-    
+    </div>
     </br></br>
-    <div>
+    <div class="o-imputs">
         <input type="text" readonly='readonly' id="id" placeholder="id (no editable)">
         <input type="text" id="name" placeholder="name">
         <input type="text" id="brand" placeholder="brand">
         <input type="number" id="year" placeholder="year">
-        <input type="text" id="description" placeholder="description">
-        
+        <input type="text" id="description" placeholder="description">     
         <select id="cat"   required>
 		  
 		</select>
-        
     </div>
-    </br>
     <div id="resultado"></div>
-    </br>
+    <div class="o-cont_btn_crud">
     <button onclick="guardarInformacion()">Guardar</button>
     <button onclick="actualizarInformacion()">Actualizar</button>
-    </br></br>
     <button onclick="location.href = 'inicio.html'">Regresar</button>
+    </div>
 
   
 	<script type="text/javascript" src="js/misFunciones_moto.js"></script>
